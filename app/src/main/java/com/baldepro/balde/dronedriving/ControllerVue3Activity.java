@@ -26,10 +26,10 @@ public class ControllerVue3Activity extends FragmentActivity implements OnMapRea
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng minimes = new LatLng(46.155, -1.155);
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        mMap.addMarker(new MarkerOptions().position(minimes).title("Les minimes à la Rochelle"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(minimes,17));
     }
 }
