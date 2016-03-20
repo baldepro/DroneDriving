@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DroneDriving</string>
+    <string name="title_activity_controller_vue3">Map</string>
+    <string name="title_activity_controller_vue2">Map</string>
+</resources>
