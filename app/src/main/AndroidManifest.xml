@@ -41,6 +41,10 @@
             android:name=".ControllerVue2Activity"
             android:label="@string/title_activity_controller_vue2">
         </activity>
+        <activity
+            android:name=".ControllerVue1Activity"
+            android:label="@string/title_activity_controller_vue1">
+        </activity>
     </application>
 
 </manifest>
