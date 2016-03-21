@@ -31,15 +31,15 @@
         <activity
             android:name=".ControllerVue3Activity"
             android:label="@string/title_activity_controller_vue3">
+        </activity>
+        <activity
+            android:name=".ControllerVue2Activity"
+            android:label="@string/title_activity_controller_vue2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".ControllerVue2Activity"
-            android:label="@string/title_activity_controller_vue2">
         </activity>
         <activity
             android:name=".ControllerVue1Activity"
