@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.PopupWindow;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -14,7 +15,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -31,6 +35,7 @@ public class ControllerVue2Activity extends FragmentActivity implements OnMapRea
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        mMap = mapFragment.getMap();
         modeleVue2 = new ModeleVue2();
         modeleVue2.addObserver(this);
         init = new LatLng(46.155, -1.155);
@@ -40,7 +45,6 @@ public class ControllerVue2Activity extends FragmentActivity implements OnMapRea
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         // anoune a modifier quelques choses
-        // Add a marker in Sydney and move the camera
         LatLng minimes = new LatLng(46.155, -1.155);
         mMap.addMarker(new MarkerOptions().position(minimes).title("Marker in port des Minimes"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(minimes));

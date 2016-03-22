@@ -2,9 +2,6 @@ package com.baldepro.balde.dronedriving;
 
 import com.google.android.gms.maps.model.LatLng;
 
-/**
- * Created by Aymeric on 22/03/2016.
- */
 public class WayPoint {
     private LatLng wayPoint;
     private float vitesse;
