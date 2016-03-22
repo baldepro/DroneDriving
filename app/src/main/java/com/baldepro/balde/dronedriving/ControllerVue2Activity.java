@@ -47,7 +47,7 @@ public class ControllerVue2Activity extends FragmentActivity implements OnMapRea
         // anoune a modifier quelques choses
         LatLng minimes = new LatLng(46.155, -1.155);
         mMap.addMarker(new MarkerOptions().position(minimes).title("Marker in port des Minimes"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(minimes));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(minimes,19));
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
