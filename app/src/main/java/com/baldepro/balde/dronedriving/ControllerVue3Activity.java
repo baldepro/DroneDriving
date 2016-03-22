@@ -23,7 +23,7 @@ public class ControllerVue3Activity extends FragmentActivity implements OnMapRea
     private GoogleMap mMap;
     private ModeleVue3 modeleVue3;
     private SensorManager sensorManager;
-    private Sensor acceleromtre;
+    private Sensor accelerometre;
     private LatLng PositionInit;
 
     @Override
@@ -33,7 +33,7 @@ public class ControllerVue3Activity extends FragmentActivity implements OnMapRea
         modeleVue3 = new ModeleVue3(new LatLng(46.155,-1.155),12,13);
         modeleVue3.addObserver(this);
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        acceleromtre = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        accelerometre = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -45,13 +45,13 @@ public class ControllerVue3Activity extends FragmentActivity implements OnMapRea
     @Override
     protected void onPause(){
         super.onPause();
-        sensorManager.unregisterListener(this, acceleromtre);
+        sensorManager.unregisterListener(this, accelerometre);
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-        sensorManager.registerListener(this, acceleromtre,SensorManager.SENSOR_DELAY_UI);
+        sensorManager.registerListener(this, accelerometre,SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
