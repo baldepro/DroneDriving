@@ -11,8 +11,9 @@ import java.util.Observable;
 public class ModeleVue3 extends Observable{
     private LatLng positionInitiale;
     private LatLng positionCourante;
-    private float puissanceMoteur1;
-    private float puissanceMoteur2;
+    private double puissanceMoteur1;
+    private double puissanceMoteur2;
+    private double orientation;
     private ArrayList<LatLng> listeWayPoint;
 
     public ModeleVue3(LatLng positionInitiale, float puissanceMoteur1, float puissanceMoteur2) {
@@ -20,6 +21,7 @@ public class ModeleVue3 extends Observable{
         this.positionCourante = positionInitiale;
         this.puissanceMoteur1 = puissanceMoteur1;
         this.puissanceMoteur2 = puissanceMoteur2;
+        this.orientation = 0;
         this.listeWayPoint = new ArrayList<>();
     }
 
@@ -31,11 +33,11 @@ public class ModeleVue3 extends Observable{
         return positionCourante;
     }
 
-    public float getPuissanceMoteur1() {
+    public double getPuissanceMoteur1() {
         return puissanceMoteur1;
     }
 
-    public float getPuissanceMoteur2() {
+    public double getPuissanceMoteur2() {
         return puissanceMoteur2;
     }
 
@@ -54,14 +56,8 @@ public class ModeleVue3 extends Observable{
     public void setPuissanceMoteur2(float puissanceMoteur2) {
         this.puissanceMoteur2 = puissanceMoteur2;
     }
-    public void setChangeModele(float x, float y, float z){
-        //manipulation des données
-        LatLng pos = new LatLng(z,x);
-        positionCourante = pos;
-        if(listeWayPoint.contains(pos)){
-            puissanceMoteur1 = puissanceMoteur1*2;
-            puissanceMoteur2 = puissanceMoteur2*2;
-        }
+    public void setChangeModele(double x, double y, double z){
+        this.orientation=x;
         this.setChanged();
         this.notifyObservers(this);
     }
