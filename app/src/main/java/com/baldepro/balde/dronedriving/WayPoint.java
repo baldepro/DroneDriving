@@ -2,7 +2,8 @@ package com.baldepro.balde.dronedriving;
 
 import com.google.android.gms.maps.model.LatLng;
 
-public class WayPoint {
+public class WayPoint
+{
     private LatLng wayPoint;
     private float vitesse;
 
@@ -26,6 +27,5 @@ public class WayPoint {
     public void setVitesse(float vitesse) {
         this.vitesse = vitesse;
     }
-
 
 }

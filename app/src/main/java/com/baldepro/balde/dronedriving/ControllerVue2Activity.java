@@ -39,7 +39,6 @@ public class ControllerVue2Activity extends FragmentActivity implements OnMapRea
         modeleVue2 = new ModeleVue2();
         modeleVue2.addObserver(this);
         init = new LatLng(46.155, -1.155);
-
     }
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -47,7 +46,7 @@ public class ControllerVue2Activity extends FragmentActivity implements OnMapRea
         // anoune a modifier quelques choses
         LatLng minimes = new LatLng(46.155, -1.155);
         mMap.addMarker(new MarkerOptions().position(minimes).title("Marker in port des Minimes"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(minimes,19));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(minimes,16));
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
@@ -66,6 +65,7 @@ public class ControllerVue2Activity extends FragmentActivity implements OnMapRea
            .add(init)
            .add(modele2.getLast().getWayPoint()));
             init = modele2.getLast().getWayPoint();
+            mMap.addMarker(new MarkerOptions().position(init).title("Marker X"));
         }
     }
 
